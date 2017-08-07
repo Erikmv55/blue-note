@@ -18,8 +18,8 @@ function getDataFromTwitter(){
 }
 
 
-function getDataFromYoutube(){
-    var apiKey = ''
+function getDataFromFacebook(){
+    var apiKey = 'AIzaSyAc8Y9i_9FpmgHiXz6hpA-tTtNkFGCMRhs'
     var url = ''
     
     fetch(url, {
