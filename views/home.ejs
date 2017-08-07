@@ -7,6 +7,7 @@
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
           <link rel="stylesheet" href="css/style.css" />
+          <link href="twitteruser.ejs"
           <!-- Compiled and minified JavaScript -->
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
@@ -17,19 +18,17 @@
       
       <!--Header-->
       <header>
-      <nav>
-      <nav class="light-blue darken-2">
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Blue Note</a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-            <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-            <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-            <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
-          </ul>
-        </div>
-      </nav>
-      </nav>
+        <nav class="light-blue darken-2">
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Blue Note</a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+              <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+              <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+              <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+            </ul>
+          </div>
+        </nav>
       </header>
       
       <!--Side Nav -->
@@ -50,34 +49,34 @@
         </ul>
       <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
       
-      <!--Script type choice-->
-      <script type="text/javascript">
-           // Initialize collapse button
-      $(".button-collapse").sideNav();
-      // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-      </script>
-      
       <!--Middle Part of the body-->
       <main>
       <div class="row">
         <div class="col xs6 s6 m6 l6 xl6">
         <div class="card vertical" alt="Twitter">
-            <p>Search your favorite Twitter user here: <input type="text" id="userinput" /></p>
-            <button onclick={getDataFromTwitter()}>Find User</button>
+          <form method="POST" action="/search-twitter-user">
+            <p>Search your favorite Twitter user here: <input type="text" id="userinput" name="twitterUser" /></p>
+            <button class="btn" type="submit">Find User Tweets</button>
+          </form>
             <p>Tweet here: <input type="text" id="userinput" /></p>
             <button onclick={postTweet()}>Tweet</button>
-            <script src="script.js"></script>
+            
             </div>
           </div>
       <div class="col xs6 s6 m6 l6 xl6">
         <div class="card vertical"  alt="Youtube">
             <p>Enter your favorite Youtuber user here: <input type="text" id="userinput" /></p>
             <button onclick={getDataFromYoutube()}>submit</button>
-            <script src="script.js"></script>
+            
             </div>
             </div>
           </div>
     
+          
+       
+    
+
+          
       </main>
     
       <!--Footer-->
@@ -106,8 +105,14 @@
             </div>
           </div>
       </footer>
-            
+      
+      <!--Script type choice-->
+      <script type="text/javascript">
+           // Initialize collapse button
+      $(".button-collapse").sideNav()
+      // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+      </script>      
+      <script src="script.js"></script>     
+     
      </body>    
-     
-     
 </html>
